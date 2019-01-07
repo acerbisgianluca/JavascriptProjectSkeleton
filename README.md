@@ -1,11 +1,13 @@
 # Scheletro per i lavori di gruppo
 
-## Titolo progetto 
+## MatematicAPP
 
-Ogni gruppo definisce un titolo progetto (< 100 caratteri) e una descrizione( <500 caratteri)
+Applicazione per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
 
 ## Partecipanti
-Elenco partecipanti
+Gianluca Acerbis
+Sami Sehnoun
+Davide Trainini
 
 ## Ruoli
 
