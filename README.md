@@ -5,15 +5,15 @@
 Applicazione per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
 
 ## Partecipanti
-Gianluca Acerbis
-Sami Sehnoun
-Davide Trainini
+*Gianluca Acerbis
+*Sami Sehnoun
+*Davide Trainini
 
 ## Ruoli
 
-* PROJECT_MANAGER = 
-* DOCUMENTAZIONE = 
-* CSS = 
+* PROJECT_MANAGER = Gianluca Acerbis
+* DOCUMENTAZIONE = Davide Trainini, Sami Sehnoun
+* CSS = Gianluca Acerbis
 
 ## Regolamento
 * Ogni gruppo consegnerà il link ad un repository GIT che sarà un fork di questo progetto.
