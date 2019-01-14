@@ -2,12 +2,12 @@
 
 ## MatematicAPP
 
-Applicazione per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
+### Applicazione per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
 
 ## Partecipanti
-*Gianluca Acerbis
-*Sami Sehnoun
-*Davide Trainini
+* Gianluca Acerbis
+* Sami Sehnoun
+* Davide Trainini
 
 ## Ruoli
 
