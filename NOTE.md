@@ -16,8 +16,8 @@
 
 # DIAGRAMMI DI SEQUENZA
 
-[ ] Risoluzione espressione
-  [ ] Inserimento da parte dell'utente della funzione nel sistema.
-  [ ] Pressione tasto corrispondente al metodo desiderato
-  [ ] Verifica da parte del sistema della funzione inserita e notifica inserimento errato.
-  [ ] Elaborazione da parte del sistema e visualizzazione del risultato
+### Risoluzione espressione
+1. Inserimento da parte dell'utente della funzione nel sistema.
+2. Pressione tasto corrispondente al metodo desiderato
+3. Verifica da parte del sistema della funzione inserita e notifica inserimento errato.
+4. Elaborazione da parte del sistema e visualizzazione del risultato
