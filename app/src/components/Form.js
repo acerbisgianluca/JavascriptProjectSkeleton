@@ -17,6 +17,8 @@ const styles = theme => ({
 	container: {
 		display: 'flex',
 		flexWrap: 'wrap',
+		margin: 'auto',
+		width: '500px'
 	},
 	textField: {
 		marginLeft: theme.spacing.unit,
@@ -180,23 +182,8 @@ class Form extends React.Component {
 		const { classes } = this.props;
 
 		return (
-			<div>
-				<Snackbar
-					anchorOrigin={{
-						vertical: 'bottom',
-						horizontal: 'left',
-					}}
-					open={this.state.open}
-					autoHideDuration={6000}
-					onClose={this.handleClose}
-				>
-					<SnackbarContentWrapper
-						onClose={this.handleClose}
-						variant="error"
-						message="Compilare tutti i campi"
-					/>
-				</Snackbar>
-				<form className={classes.container} autoComplete="off">
+			<div className={classes.container}>
+				<form autoComplete="off">
 					<TextField
 						id="outlined-name"
 						label="Testo"
@@ -236,7 +223,22 @@ class Form extends React.Component {
 				</form>
 				<Typography variant="h6" gutterBottom>
 					{this.state.result && ("Risultato: " + this.state.result)}
-      			</Typography>
+				</Typography>
+				<Snackbar
+					anchorOrigin={{
+						vertical: 'bottom',
+						horizontal: 'left',
+					}}
+					open={this.state.open}
+					autoHideDuration={6000}
+					onClose={this.handleClose}
+				>
+					<SnackbarContentWrapper
+						onClose={this.handleClose}
+						variant="error"
+						message="Compilare tutti i campi"
+					/>
+				</Snackbar>
 			</div>
 		);
 	}

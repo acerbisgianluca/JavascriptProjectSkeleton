@@ -5,6 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 class Rule extends React.Component {
 
@@ -19,12 +22,24 @@ class Rule extends React.Component {
 				<DialogTitle id="alert-dialog-title">{'Regole'}</DialogTitle>
 				<DialogContent>
 					<DialogContentText id="alert-dialog-description">
-						Keep in mind: To find the tangent line of a function at a certain x value, send the request as c|f(x) where c is the given x value and f(x) is the function expression, the separator is a vertical bar '|'. See the table above for an example request.
-						<br />
-						To find the area under a function, send the request as c:d|f(x) where c is the starting x value, d is the ending x value, and f(x) is the function under which you want the curve between the two x values.
-						<br />
-						To compute fractions, enter expressions as numerator(over)denominator. For example, to process 2/4 you must send in your expression as 2(over)4. The result expression will be in standard math notation (1/2, 3/4).
-            </DialogContentText>
+						<List dense={false}>
+							<ListItem>
+								<ListItemText
+									primary="Per trovare la retta tangente ad una funzione in un determinato valore x, invia la richiesta come c|f(x) dove c è il valore x dato ed f(x) è l'espressione della funzione, il separatore è una barra verticale '|'."
+								/>
+							</ListItem>
+							<ListItem>
+								<ListItemText
+									primary="Per trovare l'area sotto una funzione, invia la richiesta come c:d|f(x) dove c è il valore di x iniziale, d è il valore di x finale e f(x) è la funzione di cui vuoi conoscere l'area fra i 2 valori di x."
+								/>
+							</ListItem>
+							<ListItem>
+								<ListItemText
+									primary="Per calcolare le frazioni, inserisci espressioni come denominatore(over)numeratore. Ad esempio, per elaborare 2/4 devi inviare la tua espressione come 2(over)4. L'espressione del risultato sarà nella notazione matematica standard (1/2, 3/4)."
+								/>
+							</ListItem>
+						</List>
+					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={this.props.onClose} color="primary">
