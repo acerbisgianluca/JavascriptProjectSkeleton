@@ -160,7 +160,11 @@ class Form extends React.Component {
 
 		let url = this.api + this.state.type + '/' + encodeURI(this.state.text);
 		fetch(url)
-			.then((res) => res.json())
+			.then((res) => {
+				if (!res.ok) throw new Error('Operazione non valida');
+
+				return res.json();
+			})
 			.then((json) => {
 				if (!json.result[0]) throw new Error('Operazione non valida');
 
@@ -217,7 +221,7 @@ class Form extends React.Component {
 
 		return (
 			<div className={classes.container}>
-				<form autoComplete="off">
+				<form autoComplete="off" onSubmit={this.onButtonClick}>
 					<TextField
 						id="outlined-name"
 						label="Testo"
