@@ -2,7 +2,7 @@
 
 ## MatematicAPP
 
-### Applicazione per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
+### Applicazione in React.js per la risoluzione di espressioni matematiche eseguendo: semplificazione, fattorizzazione, derivazione, integrazione. Trova inoltre gli zeri, la tangente, coseno, seno, logaritmo.
 
 ## Partecipanti
 * Gianluca Acerbis
@@ -19,6 +19,6 @@
 * Ogni gruppo consegnerà il link ad un repository GIT che sarà un fork di questo progetto.
 * La documentazione andrà caricata nella sezione Wiki di questo repo.
 * Il codice andrà caricato in una cartella public all'interno della root del repository
-* ogni partecipante dovrà essere a conoscenza di TUTTO il progetto
-* il progetto deve contenere un file .pdf con il documento di specifica dei requisiti (user story + casi uso + diagramma classi + (opzionale) un diagramma di sequenza).
-* redazione di una relazione tecnica del progetto (caricata come file .md)
+* Ogni partecipante dovrà essere a conoscenza di TUTTO il progetto
+* Il progetto deve contenere un file .pdf con il documento di specifica dei requisiti (user story + casi uso + diagramma classi + (opzionale) un diagramma di sequenza).
+* Redazione di una relazione tecnica del progetto (caricata come file .md)
