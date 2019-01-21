@@ -10,7 +10,6 @@
 * Davide Trainini
 
 ## Ruoli
-
 * PROJECT_MANAGER = Gianluca Acerbis
 * DOCUMENTAZIONE = Davide Trainini, Sami Sehnoun
 * CSS = Gianluca Acerbis
