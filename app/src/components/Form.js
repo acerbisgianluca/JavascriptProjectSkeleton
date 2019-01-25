@@ -8,6 +8,8 @@ import SnackbarContentWrapper from './SnackbarContentWrapper';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 /**
  * @ignore
@@ -17,7 +19,14 @@ const styles = (theme) => ({
 		display: 'flex',
 		flexWrap: 'wrap',
 		margin: 'auto',
-		width: '500px',
+		width: '600px',
+	},
+	form: {
+		zoom: '125%',
+	},
+	card: {
+		margin: 'auto',
+		width: '600px',
 	},
 	textField: {
 		marginLeft: theme.spacing.unit,
@@ -39,7 +48,7 @@ const styles = (theme) => ({
 		margin: theme.spacing.unit,
 	},
 	fab: {
-		margin: theme.spacing.unit,
+		marginTop: '3.5%',
 	},
 	wrapper: {
 		margin: theme.spacing.unit,
@@ -132,7 +141,7 @@ class Form extends React.Component {
 	constructor(props) {
 		super(props);
 		this.api = 'https://newton.now.sh/';
-		this.state = { result: '', text: '', type: 'simplify', open: false };
+		this.state = { result: '', text: '', type: 'simplify', open: false, error: false, show: false };
 	}
 
 	/**
@@ -161,25 +170,30 @@ class Form extends React.Component {
 		let url = this.api + this.state.type + '/' + encodeURI(this.state.text);
 		fetch(url)
 			.then((res) => {
-				if (!res.ok) throw new Error('Operazione non valida');
+				if (!res.ok)
+					throw new Error();
 
 				return res.json();
 			})
 			.then((json) => {
-				if (!json.result[0]) throw new Error('Operazione non valida');
+				if (!json.result[0]) throw new Error();
 
 				console.log('Risultato:', json.result);
 
 				this.setState({
 					result: json.result,
+					error: false,
+					show: true
 				});
 			})
 			.catch((err) => {
+				err.message = 'Operazione non valida';
 				console.log('Errore:', err.message);
 
 				this.setState({
-					result: false,
+					error: true,
 					message: err.message,
+					show: true
 				});
 			});
 	};
@@ -220,14 +234,17 @@ class Form extends React.Component {
 		const { classes } = this.props;
 
 		return (
-			<div className={classes.container}>
-				<form autoComplete="off" onSubmit={this.onButtonClick}>
+			<div className={ classes.container }>
+				<form
+					className={ classes.form }
+					autoComplete="off"
+					onSubmit={ this.onButtonClick }>
 					<TextField
 						id="outlined-name"
 						label="Testo"
-						className={classes.textField}
-						value={this.state.text}
-						onChange={this.onTextChange}
+						className={ classes.textField }
+						value={ this.state.text }
+						onChange={ this.onTextChange }
 						margin="normal"
 						variant="outlined"
 						required
@@ -236,47 +253,51 @@ class Form extends React.Component {
 						id="outlined-select-currency"
 						select
 						label="Operazione"
-						className={classes.textField}
-						value={this.state.type}
-						onChange={this.onTypeChange}
-						SelectProps={{
+						className={ classes.textField }
+						value={ this.state.type }
+						onChange={ this.onTypeChange }
+						SelectProps={ {
 							MenuProps: {
 								className: classes.menu,
 							},
-						}}
+						} }
 						helperText="Seleziona l'operazione"
 						margin="normal"
 						variant="outlined"
 						required>
-						{operations.map((option) => (
-							<MenuItem key={option.value} value={option.value}>
-								{option.label}
+						{ operations.map((option) => (
+							<MenuItem key={ option.value } value={ option.value }>
+								{ option.label }
 							</MenuItem>
-						))}
+						)) }
 					</TextField>
 					<Fab
 						color="secondary"
-						onClick={this.onButtonClick}
+						onClick={ this.onButtonClick }
 						aria-label="Edit"
-						className={classes.fab}>
+						className={ classes.fab }>
 						<Icon>play_arrow</Icon>
 					</Fab>
 				</form>
-				<Typography variant="h6" gutterBottom>
-					{this.state.result
-						? 'Risultato: ' + this.state.result
-						: this.state.message}
-				</Typography>
+				{ this.state.show && <Card className={ classes.card }>
+					<CardContent>
+						<Typography variant="h5" component="h2">
+							{ !this.state.error
+								? 'Risultato: ' + this.state.result
+								: this.state.message }
+						</Typography>
+					</CardContent>
+				</Card> }
 				<Snackbar
-					anchorOrigin={{
+					anchorOrigin={ {
 						vertical: 'bottom',
 						horizontal: 'left',
-					}}
-					open={this.state.open}
-					autoHideDuration={6000}
-					onClose={this.handleClose}>
+					} }
+					open={ this.state.open }
+					autoHideDuration={ 6000 }
+					onClose={ this.handleClose }>
 					<SnackbarContentWrapper
-						onClose={this.handleClose}
+						onClose={ this.handleClose }
 						message="Compilare tutti i campi"
 					/>
 				</Snackbar>
