@@ -40,6 +40,9 @@ class Rule extends React.Component {
 							<ListItem>
 								<ListItemText primary="Per calcolare le frazioni, inserisci espressioni come denominatore(over)numeratore. Ad esempio, per elaborare 2/4 devi inviare la tua espressione come 2(over)4. L'espressione del risultato sarà nella notazione matematica standard (1/2, 3/4)." />
 							</ListItem>
+							<ListItem>
+								<ListItemText primary="Per calcolare seno, coseno, tangente e rispettive operazioni inverse utilizzare i radianti. Il pi greco va espresso come 'pi'" />
+							</ListItem>
 						</List>
 					</DialogContentText>
 				</DialogContent>
