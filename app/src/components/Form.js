@@ -61,6 +61,9 @@ const styles = (theme) => ({
 		boxShadow: theme.shadows[5],
 		padding: theme.spacing.unit * 4,
 		outline: 'none',
+		error: {
+			color: 'red',
+		},
 	},
 });
 
@@ -281,7 +284,7 @@ class Form extends React.Component {
 				</form>
 				{ this.state.show && <Card className={ classes.card }>
 					<CardContent>
-						<Typography variant="h5" component="h2">
+						<Typography variant="h5" component="h2" className={this.state.error ? classes.error : ''}>
 							{ !this.state.error
 								? 'Risultato: ' + this.state.result
 								: this.state.message }
